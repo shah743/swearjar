@@ -64,11 +64,17 @@ class Swearjar
     data['simple'].each do |test, type|
       @hash[test] = type
     end if data['simple']
+    
+     data['addedCustomWord'].each do |test, type|
+      @hash[test] = type
+    end if data['addedCustomWord']
 
     data['emoji'].each do |unicode, type|
       char = [unicode.hex].pack("U")
       @hash[char] = type
     end if data['emoji']
+    
+    
   end
 
   def scan(string, &block)
