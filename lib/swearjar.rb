@@ -76,7 +76,7 @@ class Swearjar
       position = Regexp.last_match.offset(0)[0]
       test = @hash[word.downcase] ||
         @hash[word.downcase.sub(/s\z/,'')] ||
-        @hash[word.downcase.sub(/es\z/,'')]
+        @hash[word.downcase.sub(/es\z/,'')] || @hash[string]
       block.call(test, word, position)
     end
 
