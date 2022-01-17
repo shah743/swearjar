@@ -26,7 +26,8 @@ class Swearjar
   def profane?(string)
     string = string.to_s
     scan(string) {|test| return true if test }
-    false
+
+    @hash.keys.map{|key| string.include?(key)}.any? ? true : false
   end
 
   def scorecard(string)
