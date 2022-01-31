@@ -27,7 +27,7 @@ class Swearjar
     string = string.to_s
     scan(string) {|test| return true if test }
 
-    @hash.keys.map{|key| string.include?(key)}.any? ? true : false
+    false
   end
 
   def scorecard(string)
